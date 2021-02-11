@@ -1,0 +1,2 @@
+class WineHistoriesController < ApplicationController
+end
