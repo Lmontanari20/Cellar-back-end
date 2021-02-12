@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
 
-    def new
+    def create
         user = User.find_by(username: params[:username])
 
-        if(!user) 
+        if user
             render json: {message: "This username has already been taken"}
             return
         else 
