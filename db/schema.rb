@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_11_182247) do
+ActiveRecord::Schema.define(version: 2021_02_16_183309) do
 
   create_table "bottles", force: :cascade do |t|
     t.float "price"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_182247) do
     t.integer "section_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "size"
     t.index ["section_id"], name: "index_bottles_on_section_id"
     t.index ["wine_id"], name: "index_bottles_on_wine_id"
   end
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(version: 2021_02_11_182247) do
 
   create_table "wines", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "wineType"
     t.string "winery"
     t.integer "year"
     t.datetime "created_at", precision: 6, null: false
