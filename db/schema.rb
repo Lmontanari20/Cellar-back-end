@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_183309) do
+ActiveRecord::Schema.define(version: 2021_02_16_221604) do
 
   create_table "bottles", force: :cascade do |t|
     t.float "price"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(version: 2021_02_16_183309) do
     t.integer "columns"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "x"
+    t.integer "y"
+    t.integer "user_id"
     t.index ["cellar_id"], name: "index_sections_on_cellar_id"
   end
 
