@@ -1,3 +1,3 @@
 class Bottle < ApplicationRecord
-    belongs_to :WineHistory
+    belongs_to :wine
 end
