@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+User.destroy_all
+Cellar.destroy_all
+Section.destroy_all
+Wine.destroy_all
+Bottle.destroy_all
+
 User.create(username: "testSeed")
+User.create(username: "luke")
 
 types = [
     "Cabernet Sauvignon",
@@ -48,8 +55,11 @@ names = [
 ]
 
 Cellar.create(name: "Basement Cellar", user_id: 1)
+Cellar.create(name: "Attic Cellar", user_id: 2)
 
 Section.create(name: "backdoor section", cellar_id: 1, user_id: 1, rows: 1, columns: 10, x: 0, y: 0)
+Section.create(name: "roof section", cellar_id: 2, user_id: 2, rows: 1, columns: 10, x: 0, y: 0)
+
 
 Wine.create(name: names[1], wineType: types.sample(), winery: "Your winery", year: 1990)
 Wine.create(name: names[2], wineType: types.sample(), winery: "Your winery", year: 1990)
@@ -60,3 +70,5 @@ Bottle.create(price: 100, row: 1, column: 1, size: sizes.sample(), wine_id: 1, s
 Bottle.create(price: 100, row: 1, column: 2, size: sizes.sample(), wine_id: 2, section_id: 1)
 Bottle.create(price: 100, row: 1, column: 3, size: sizes.sample(), wine_id: 3, section_id: 1)
 Bottle.create(price: 100, row: 1, column: 4, size: sizes.sample(), wine_id: 4, section_id: 1)
+
+Bottle.create(price: 100, row: 1, column: 4, size: sizes.sample(), wine_id: 4, section_id: 2)

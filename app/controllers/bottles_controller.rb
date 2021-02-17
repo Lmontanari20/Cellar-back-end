@@ -10,6 +10,11 @@ class BottlesController < ApplicationController
         render json: bottles
     end
 
+    def show 
+        bottles = User.find(params[:id]).bottles
+        render json: bottles
+    end
+
     def update 
         bottle = Bottle.find(params[:id])
         bottle.update(row: params[:row], column: params[:column], price: params[:price], size: params[:size])
