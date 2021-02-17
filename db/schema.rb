@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_16_221604) do
+ActiveRecord::Schema.define(version: 2021_02_16_230502) do
 
   create_table "bottles", force: :cascade do |t|
     t.float "price"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2021_02_16_221604) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "size"
+    t.integer "user_id"
     t.index ["section_id"], name: "index_bottles_on_section_id"
     t.index ["wine_id"], name: "index_bottles_on_wine_id"
   end
