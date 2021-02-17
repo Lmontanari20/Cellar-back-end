@@ -8,6 +8,7 @@ class UsersController < ApplicationController
             return
         else 
             user = User.create(username: params[:username])
+            cellar = Cellar.create(user_id: user.id, name: "cellar1")
             render json: user
         end
     end
