@@ -57,8 +57,8 @@ names = [
 Cellar.create(name: "Basement Cellar", user_id: 1)
 Cellar.create(name: "Attic Cellar", user_id: 2)
 
-Section.create(name: "backdoor section", cellar_id: 1, user_id: 1, rows: 1, columns: 10, x: 0, y: 0)
-Section.create(name: "roof section", cellar_id: 2, user_id: 2, rows: 1, columns: 10, x: 0, y: 0)
+Section.create(name: "backdoor section", cellar_id: 1, rows: 1, columns: 10, x: 0, y: 0)
+Section.create(name: "roof section", cellar_id: 2, rows: 1, columns: 10, x: 0, y: 0)
 
 
 Wine.create(name: names[1], wineType: types.sample(), winery: "Your winery", year: 1990)

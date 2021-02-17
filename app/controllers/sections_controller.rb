@@ -1,13 +1,14 @@
 class SectionsController < ApplicationController
 
     def create 
-        section = Section.create(name: params[:name], cellar_id: params[:cellar_id], rows: params[:rows], columns: params[:columns])
+        section = Section.create(name: params[:name], cellar_id: params[:cellar_id], 
+          rows: params[:rows], columns: params[:columns], x: params[:x], y: params[:y])
         render json: section
     end
 
     def show
-        section = Section.where(user_id: params[:id])
-        render json: section
+      section = Section.all.select {|s| s.cellar.user_id === params[:id].to_i}
+      render json: section
     end
 
     def index

@@ -1,6 +1,5 @@
 class Section < ApplicationRecord
   belongs_to :cellar
-  has_many :bottles
+  has_many :bottles, dependent: :destroy
   has_many :wines, through: :bottles
-  belongs_to :user
 end
