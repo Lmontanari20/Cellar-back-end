@@ -15,4 +15,13 @@ class SectionsController < ApplicationController
         sections = Section.all
         render json: sections
     end
+
+    def update
+      sections = Section.all.select {|s| s.cellar.user_id === params[:id].to_i}
+      sections.each do |section| 
+        paramSection = params[:sections].find {|s| s["id"] === section.id}
+        section.update(x: paramSection[:x], y: paramSection[:y])
+      end
+      render json: sections
+    end
 end

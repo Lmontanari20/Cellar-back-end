@@ -1,5 +1,5 @@
 class AddXToSections < ActiveRecord::Migration[6.1]
   def change
-    add_column :sections, :x, :integer
+    add_column :sections, :x, :float
   end
 end

@@ -41,8 +41,8 @@ ActiveRecord::Schema.define(version: 2021_02_16_230502) do
     t.integer "columns"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "x"
-    t.integer "y"
+    t.float "x"
+    t.float "y"
     t.index ["cellar_id"], name: "index_sections_on_cellar_id"
   end
 
