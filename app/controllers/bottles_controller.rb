@@ -18,7 +18,7 @@ class BottlesController < ApplicationController
     def update 
         bottle = Bottle.find(params[:id])
         wine = Wine.find_or_create_by(name: params[:name], wineType: params[:wineType], winery: params[:winery], year: params[:year])
-        bottle.update(row: params[:row], column: params[:column], price: params[:price], size: params[:size], wine_id: wine.id)
+        bottle.update(row: params[:row], column: params[:column], price: params[:price], size: params[:size], wine_id: wine.id, section_id: params[:section_id])
     end
 
     def destroy
